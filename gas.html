@@ -7,7 +7,7 @@
   <style>
     body { margin:0; font-family:Arial, sans-serif; background:#f5f6fa; }
     header {
-      background: #105a53;;
+      background: #32bbaf;
       color: white;
       padding: 15px 30px;
       display: flex;
@@ -25,7 +25,7 @@
     .dashboard { display:flex; height: calc(100vh - 60px); }
     .sidebar {
       width: 220px;
-      background: #105a53;;
+      background: #32bbaf;
       padding-top: 20px;
       display: flex;
       flex-direction: column;
@@ -68,27 +68,27 @@
   <header>
     <h1>CITY SYNC</h1>
     <nav>
-      <a href="{{ url_for('citizen_bp.citizen_dashboard') }}">Home</a>
-      <a href="{{ url_for('citizen_bp.about') }}">About Us</a>
-      <a href="{{ url_for('citizen_bp.contact') }}">Contact</a>
-      <a href="{{ url_for('citizen_bp.profile') }}">
+      <a href="{{ url_for('citizen_dashboard') }}">Home</a>
+      <a href="{{ url_for('about') }}">About Us</a>
+      <a href="{{ url_for('contact') }}">Contact</a>
+      <a href="{{ url_for('profile') }}">
         <img src="https://www.w3schools.com/howto/img_avatar.png" style="width:40px;height:40px;border-radius:50%;">
       </a>
-      <a href="{{ url_for('citizen_bp.logout') }}" class="logout-btn">Logout</a>
+      <a href="{{ url_for('logout') }}" class="logout-btn">Logout</a>
     </nav>
   </header>
 
   <div class="dashboard">
     <aside class="sidebar">
-      <a href="{{ url_for('citizen_bp.properties') }}">Properties</a>
-      <a href="{{ url_for('citizen_bp.utility') }}" class="active">Utilities</a>
-      <a href="{{ url_for('citizen_bp.citizen_requests') }}">Requests</a>
-      <a href="{{ url_for('citizen_bp.emergency_requests') }}">Emergency</a>
-      <a href="{{ url_for('citizen_bp.transport') }}">Transport</a>
+      <a href="{{ url_for('properties') }}">Properties</a>
+      <a href="{{ url_for('utility') }}" class="active">Utilities</a>
+      <a href="{{ url_for('citizen_requests') }}">Requests</a>
+      <a href="{{ url_for('emergency_requests') }}">Emergency</a>
+      <a href="{{ url_for('transport') }}">Transport</a>
     </aside>
 
     <main class="content">
-      
+      <h2>Gas Utility</h2>
 
       <!-- Order Gas Button -->
       <form method="POST">
@@ -106,7 +106,7 @@
             <th>Order ID</th>
             <th>Order Date</th>
             <th>Delivery Date</th>
-            <th>Bill Amount (₹)</th>
+            <th>Cost (₹)</th>
             <th>Status</th>
           </tr>
         </thead>
@@ -114,10 +114,10 @@
           {% if orders %}
             {% for order in orders %}
             <tr>
-              <td>{{ order.gasbill_id }}</td>
+              <td>{{ order.order_id }}</td>
               <td>{{ order.order_date }}</td>
               <td>{{ order.delivery_date if order.delivery_date else 'Not delivered yet' }}</td>
-              <td>{{ order.billamount }}</td>
+              <td>{{ order.cost }}</td>
               <td>{{ order.status }}</td>
             </tr>
             {% endfor %}
@@ -138,7 +138,6 @@
       document.getElementById("order_date").value = today;
     }
   </script>
-
 
 </body>
 </html>
