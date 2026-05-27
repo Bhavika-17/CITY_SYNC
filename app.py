@@ -14,7 +14,7 @@ app.config['UPLOAD_FOLDER'] = os.path.join(app.root_path, 'static', 'uploads')
 os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
 
 # Database config
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///smartcity.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:CQVRQtvoePePsnXamTiVAtoyfPjbfOvT@zephyr.proxy.rlwy.net:50094/railway'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 # Init db, migrate, bcrypt, login manager
