@@ -44,5 +44,8 @@ app.register_blueprint(authority_bp, url_prefix='/authority')
 def index():
     return render_template("index.html")
 
+with app.app_context():
+    db.create_all()
+
 if __name__ == "__main__":
     app.run(debug=True)
