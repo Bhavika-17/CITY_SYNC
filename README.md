@@ -41,38 +41,41 @@ The project provides:
 - Display information about the available properties.
 - provides  aplatform for the user to sell their properties.
 
----
+# Folder Structure
 
-## Folder Structure
-
+```text
 CITY_SYNC/
 │
-├── authority/ # Authority portal
-│ ├── init.py # Blueprint initialization
-│ ├── route.py # Routes for authority portal
-│ ├── templates/ # Authority templates
-│ └── static/ # Authority static files
+├── authority/
+│   ├── __init__.py
+│   ├── routes.py
+│   ├── templates/
+│   └── static/
 │
-├── citizen/ # Citizen portal
-│ ├── init.py # Blueprint initialization
-│ ├── route.py # Routes for citizen portal
-│ ├── templates/ # Citizen templates
-│ │ ├── profile.html
-│ │ ├── signup.html
-│ │ ├── requests.html
-│ │ └── ... other pages
-│ └── static/
-│ └── uploads/ # Uploaded files like avatars or images
+├── citizen/
+│   ├── __init__.py
+│   ├── routes.py
+│   ├── templates/
+│   │   ├── profile.html
+│   │   ├── signup.html
+│   │   ├── requests.html
+│   │   └── ...
+│   │
+│   └── static/
+│       └── uploads/
 │
-├── templates/ # Main templates
-│ └── index.html # Homepage
+├── templates/
+│   └── index.html
 │
-├── app.py # Main Flask application file
-├── models.py # Database models for authority tables
-├── requirements.txt # Python dependencies
-└── README.md # Project documentation
-
----
+├── static/
+│
+├── models.py
+├── app.py
+├── requirements.txt
+├── Procfile
+├── runtime.txt
+└── README.md
+```
 
 ## Technologies Used
 
