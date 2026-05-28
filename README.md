@@ -1,5 +1,8 @@
 # CITY_SYNC - Smart City Management System
 
+## Live Demo
+🔗 https://city-sync-9wra.onrender.com
+
 ## Project Overview
 
 **CITY_SYNC** is a comprehensive Smart City Management System that allows citizens and authorities to interact seamlessly. It integrates multiple services such as utilities, emergency requests, property management, transport facilities, and more. The system is built using **Flask**, **MySQL**, and **HTML/CSS/JS** for the frontend.
@@ -156,6 +159,11 @@ Start the Flask server:
   Login: Use staff ID and department to login.
   
   Dashboard: View requests assigned to your department and manage statuses.
+
+## Deployment
+
+- Frontend & Backend Hosting: Render
+- Cloud Database: Railway MySQL
 
 ## Notes
 
