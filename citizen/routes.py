@@ -9,12 +9,16 @@ from datetime import time
 from . import citizen_bp   # import blueprint
 
 
+import os
+import mysql.connector
+
 def get_db():
     return mysql.connector.connect(
-        host="127.0.0.1",
-        user="root",
-        password="harikam@2007",
-        database="smartcity_db"
+        host=os.getenv("MYSQLHOST"),
+        user=os.getenv("MYSQLUSER"),
+        password=os.getenv("MYSQLPASSWORD"),
+        database=os.getenv("MYSQLDATABASE"),
+        port=int(os.getenv("MYSQLPORT"))
     )
 
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
@@ -566,10 +570,6 @@ def pay_gas_bill(gasbill_id):
     return render_template("pay_gas_bill.html", bill=bill, wallet=wallet)
 
 
-
-# ---------- CONFIRM GAS PAYMENT ----------
-# ---------- CONFIRM GAS PAYMENT ----------
-# ---------- CONFIRM GAS PAYMENT ----------
 @citizen_bp.route('/confirm_gas_payment/<int:gasbill_id>', methods=['POST'])
 def confirm_gas_payment(gasbill_id):
     db=get_db()
