@@ -1,5 +1,8 @@
 # CITY_SYNC - Smart City Management System
 
+## Live Demo
+🔗 https://city-sync-9wra.onrender.com
+
 ## Project Overview
 
 **CITY_SYNC** is a comprehensive Smart City Management System that allows citizens and authorities to interact seamlessly. It integrates multiple services such as utilities, emergency requests, property management, transport facilities, and more. The system is built using **Flask**, **MySQL**, and **HTML/CSS/JS** for the frontend.
@@ -38,38 +41,41 @@ The project provides:
 - Display information about the available properties.
 - provides  aplatform for the user to sell their properties.
 
----
+# Folder Structure
 
-## Folder Structure
-
+```text
 CITY_SYNC/
 │
-├── authority/ # Authority portal
-│ ├── init.py # Blueprint initialization
-│ ├── route.py # Routes for authority portal
-│ ├── templates/ # Authority templates
-│ └── static/ # Authority static files
+├── authority/
+│   ├── __init__.py
+│   ├── routes.py
+│   ├── templates/
+│   └── static/
 │
-├── citizen/ # Citizen portal
-│ ├── init.py # Blueprint initialization
-│ ├── route.py # Routes for citizen portal
-│ ├── templates/ # Citizen templates
-│ │ ├── profile.html
-│ │ ├── signup.html
-│ │ ├── requests.html
-│ │ └── ... other pages
-│ └── static/
-│ └── uploads/ # Uploaded files like avatars or images
+├── citizen/
+│   ├── __init__.py
+│   ├── routes.py
+│   ├── templates/
+│   │   ├── profile.html
+│   │   ├── signup.html
+│   │   ├── requests.html
+│   │   └── ...
+│   │
+│   └── static/
+│       └── uploads/
 │
-├── templates/ # Main templates
-│ └── index.html # Homepage
+├── templates/
+│   └── index.html
 │
-├── app.py # Main Flask application file
-├── models.py # Database models for authority tables
-├── requirements.txt # Python dependencies
-└── README.md # Project documentation
-
----
+├── static/
+│
+├── models.py
+├── app.py
+├── requirements.txt
+├── Procfile
+├── runtime.txt
+└── README.md
+```
 
 ## Technologies Used
 
@@ -156,6 +162,11 @@ Start the Flask server:
   Login: Use staff ID and department to login.
   
   Dashboard: View requests assigned to your department and manage statuses.
+
+## Deployment
+
+- Frontend & Backend Hosting: Render
+- Cloud Database: Railway MySQL
 
 ## Notes
 

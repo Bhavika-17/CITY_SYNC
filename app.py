@@ -14,7 +14,7 @@ app.config['UPLOAD_FOLDER'] = os.path.join(app.root_path, 'static', 'uploads')
 os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
 
 # Database config
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:harikam%402007@localhost/smartcity_db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:CQVRQtvoePePsnXamTiVAtoyfpjbfOvT@zephyr.proxy.rlwy.net:50094/railway'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 # Init db, migrate, bcrypt, login manager
@@ -43,6 +43,9 @@ app.register_blueprint(authority_bp, url_prefix='/authority')
 @app.route("/")
 def index():
     return render_template("index.html")
+
+with app.app_context():
+    db.create_all()
 
 if __name__ == "__main__":
     app.run(debug=True)
